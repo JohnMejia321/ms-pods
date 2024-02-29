@@ -81,7 +81,7 @@ public class App {
     }
 
 
-    private static void ejecutarPipeline(String ocrResult,String empleadorId) {
+    public static void ejecutarPipeline(String ocrResult,String empleadorId) {
         try {
             Pipeline pipeline = Pipeline.create();
             BatchStage<AbstractMap.SimpleEntry<String, String>> jsonEntries = pipeline

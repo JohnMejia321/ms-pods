@@ -12,11 +12,6 @@ public class ConstantsTest {
     }
 
     @Test
-    void testKeyspaceName() {
-        assertEquals("cristian", Constants.KEYSPACE_NAME);
-    }
-
-    @Test
     void testEntityBasePackage() {
         assertEquals("com.inner.servicioempleador.id.models", Constants.ENTITY_BASE_PACKAGE);
     }

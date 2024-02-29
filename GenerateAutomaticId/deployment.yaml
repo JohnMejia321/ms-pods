@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: generate-id
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: generate-id
+  template:
+    metadata:
+      labels:
+        app: generate-id
+    spec:
+      containers:
+      - name: springboot-container
+        image: johnmejia9887654321/generador-id:latest
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: generate-id-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: generate-id
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080

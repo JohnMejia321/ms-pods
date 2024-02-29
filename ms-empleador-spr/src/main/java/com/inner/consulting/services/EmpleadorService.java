@@ -52,7 +52,8 @@ public class EmpleadorService {
 
     public Empleador saveEmpleador(Empleador empleador, MultipartFile pdfFile,MultipartFile documentoIdentidad) throws Exception {
         try {
-            ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://host.docker.internal:8084/generatedId", String.class);
+          //  ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://host.docker.internal:8084/generatedId", String.class);
+          ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://generate-id-svc:8080/generatedId", String.class);
             String empleadorIdRest = responseEntity.getBody();
             ObjectMapper objectMapper = new ObjectMapper();
 

@@ -77,4 +77,8 @@ public class IdGenerator {
         generatedId.setCreatedDate(new Date());
         cassandraTemplate.insert(generatedId);
     }
+
 }
+
+
+

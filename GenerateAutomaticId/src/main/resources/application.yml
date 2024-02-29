@@ -1,0 +1,7 @@
+spring:
+  cassandra:
+    port: 9042
+    contact-points: cassandra-svc
+    schema-action: CREATE_IF_NOT_EXISTS
+    keyspace-name: id_generate
+    local-datacenter: datacenter1

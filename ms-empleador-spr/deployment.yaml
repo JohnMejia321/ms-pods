@@ -18,7 +18,7 @@ spec:
         - "kafka-svc"
       containers:
       - name: inscripcion-empleador
-        image: johnmejia9887654321/inscripcion-empleador-v3:latest  # Utiliza tu imagen Docker desde Docker Hub
+        image: johnmejia9887654321/incripcion-empleador-v5:latest  # Utiliza tu imagen Docker desde Docker Hub
         ports:
         - containerPort: 8081
 
