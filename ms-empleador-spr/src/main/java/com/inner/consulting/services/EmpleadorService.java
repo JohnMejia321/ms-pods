@@ -72,7 +72,7 @@ public class EmpleadorService {
             String inputString = PdfUtils.processPDFDocument(pdfFile.getInputStream());
             JSONObject jsonObject = new JSONObject();
             try (FileWriter fileWriter = new FileWriter(tempJsonPath.toFile())) {
-                fileWriter.write( PdfUtils.convertToJSON(inputString) );
+                fileWriter.write( PdfUtils.convertToJSON(inputString,empleadorId) );
             }
             minioClient.putObject(
                     PutObjectArgs.builder()

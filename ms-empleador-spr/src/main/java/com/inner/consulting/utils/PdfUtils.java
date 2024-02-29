@@ -10,8 +10,6 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import technology.tabula.*;
 import technology.tabula.extractors.BasicExtractionAlgorithm;
 
-import java.io.File;
-import java.io.IOException;
 import java.text.Normalizer;
 import java.util.List;
 
@@ -69,18 +67,18 @@ public class PdfUtils {
         return result.toString();
     }
 
-    public static String convertToJSON(String keyValueString) {
+    public static String convertToJSON(String keyValueString, String id) {
         JSONObject json = new JSONObject();
         String[] lines = keyValueString.split("\n");
         for (String line : lines) {
             String[] keyValue = line.split(":");
             if (keyValue.length == 2) {
-                // String key = keyValue[0].trim().replace(" ", "_");
                 String key = keyValue[0].trim();
                 String value = keyValue[1].trim();
                 json.put(key, value);
             }
         }
+        json.put("Id de identificacion", id); 
         return json.toString();
     }
 }
